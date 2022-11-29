@@ -219,14 +219,14 @@ window.category = async (status = "hide") => {
 
         buttonEdit.addEventListener("click", async function (event) {
           event.preventDefault();
-          await editCategories(
+          await editBook(
             idBookTable,
             tituloBookInput.value,
             autorBookInput.value,
             descricaoBookInput.value
           );
           await alert(
-            "Categoria " + nameCategoryInput.value + "Alterada com sucesso!"
+            "Livro " + tituloBookInput.value + "Alterado com sucesso!"
           );
           booksRenderAux();
         });
@@ -284,13 +284,12 @@ window.category = async (status = "hide") => {
     }
 
     async function registerBook(tiragem, titulo, autor, descricao) {
-      await createBook(tiragem.value, titulo.value, autor.value, descricao.value);
-
+      await createBook(parseint(tiragem.value), titulo.value, autor.value, descricao.value);
       booksRenderAux();
     }
 
     function captureDataRegister() {
-      const button = document.querySelector("#btn-cadastrar-livro");
+      const button = parseInt(document.querySelector("#btn-cadastrar-livro"));
       const tiragem = document.querySelector("#tiragem");
       const titulo = document.querySelector("#titulo");
       const autor = document.querySelector("#autor");
@@ -298,7 +297,7 @@ window.category = async (status = "hide") => {
 
       button.addEventListener("click", function (event) {
         event.preventDefault();
-        registerCategory(tiragem, titulo,autor,descricao);
+        registerBook(parseInt(tiragem), titulo,autor,descricao);
       });
     }
 

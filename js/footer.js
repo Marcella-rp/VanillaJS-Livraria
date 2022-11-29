@@ -7,7 +7,7 @@
 window.generateFooter = async function () {
 
 
-  const requestBook = await listCategories();
+  const requestBook = await listBooks();
   const livros =
     requestBook.length != 0
       ? requestBook

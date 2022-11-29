@@ -16,7 +16,7 @@ const headerLinks = [
 function generateHeader() {
   const header = document.createElement("header");
   const headerSection = document.createElement("section");
-  const logo = document.createElement("img");
+  const logo = document.createElement("span");
   headerSection.appendChild(logo);
   const nav = document.createElement("nav");
   const navList = document.createElement("ul");
